@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-6447aa8fde19d3d17d16.js"
+    "url": "webpack-runtime-c717a8c58f70640644bb.js"
   },
   {
-    "url": "commons-43d0e03604f11484c747.js"
+    "url": "commons-b69ec376fa6d89a19960.js"
   },
   {
-    "url": "app-2485edccfcccbff2d257.js"
+    "url": "app-5c6609fec9a8e6a8ed42.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-2fb560e943ea9fad2129.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6a7259a4f2751c052d19b7ac6fbaec0f"
+    "revision": "d3ff40b1ea48b06922c8dd1ad03b57f1"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "9e5374ba5a20188f1fdb302e3673e928"
+    "revision": "86e8949bc93680b64e50e682fdc881d0"
   },
   {
     "url": "manifest.webmanifest",
@@ -140,12 +140,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/ghost`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-2485edccfcccbff2d257.js`))) {
+  if (!resources || !(await caches.match(`/ghost/app-5c6609fec9a8e6a8ed42.js`))) {
     return await fetch(event.request)
   }
 
@@ -158,7 +158,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/ghost/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
