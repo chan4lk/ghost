@@ -1,6 +1,6 @@
 module.exports = {
-    siteUrl: `https://styxlab.github.io`, // Site domain. Do not include a trailing slash!
-
+    siteUrl: `https://chan4lk.github.io/ghost`, // Site domain. Do not include a trailing slash!
+    pathPrefix: `/ghost`,
     postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     siteTitleMeta: `Gatsby Ghost Casper`, // This allows an alternative site title for meta data for pages.

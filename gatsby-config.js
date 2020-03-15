@@ -16,6 +16,7 @@ try {
             contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
         production: {
+            pathPrefix: `/ghost`,
             apiUrl: process.env.GHOST_API_URL,
             contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
